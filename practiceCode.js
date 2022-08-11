@@ -38,3 +38,20 @@ function isPerfect(num)
      return false;
 }
 console.log("final",isPerfect(28))
+
+
+
+function returnNumber(num)
+{
+    let total = 0;
+    for(let i = 0;i < num;i++)
+    {
+        if(num % i === 0)
+        {
+            total += i;
+        }
+    }
+    if(num === total) return true;
+    return false;
+}
+console.log('resulu',returnNumber(23));
