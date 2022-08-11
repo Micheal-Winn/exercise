@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let module = {
+        data : "Some data",
+        f1: function(par1)
+        {
+            console.log("Function 1 called ",par1);
+            return "Hello";
+        },
+        f2: function()
+        {
+            console.log("Function 2 called");
+        }
+    }
+    function injectLog(obj)
+    {
+       
+        for(const [key,value] of Object.entries(obj))
+        {
+            //console.log("Typeof ",typeof value, " value ",value);
+            if(typeof value === "function" )
+            {
+                let originalFunc =  obj[key];
+                //console.log(`Property ${key} is function`);
+                obj[key] = function()
+                {
+                    console.log(`Debug.log ${key} is called with `,arguments);
+                    let retValue = originalFunc.apply(null,arguments);
+                    console.log(`Debug.log ${key} is returned with `,retValue);
+                    return retValue;
+                }
+            }
+        }
+    }
+    injectLog(module);
+    let data =  module.f1();
+    console.log("Data ",data);
+    module.f2();
+    </script>
+</html>
