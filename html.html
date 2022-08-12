@@ -22,6 +22,24 @@
             return final;
         }
         console.log('power',powerExponent(5,5))
+
+        let str = "thequickbrownfoxjumpsoverthelazydog";
+        function unique(str)
+        {
+            let str1 = str;
+            let uniq = "";
+            for(let i = 0;i < str1.length;i++)
+            {
+                if(!uniq.includes(str[i]))
+                {
+                    uniq += str[i]
+                }
+            }
+            return uniq;
+        }
+        console.log('finalrr',unique(str));
+
+
     </script>
 </body>
 
