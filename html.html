@@ -7,10 +7,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div>
-        <h1 id="name"></h1>
-        <h2 id="age"></h2>
-    </div>
+    <script>
+        let baseNumber = Number(prompt('enter base number which you wana to exponext'));
+        let powerNumber =Number(prompt('enter a power number to exponet'));
+        let result = Number(alert(Math.pow(baseNumber,powerNumber)));
+
+        function powerExponent(base,pow)
+        {
+            let final = 1;
+            for(let i = 0;i< pow;i++)
+            {
+                final = base * final;
+            }
+            return final;
+        }
+        console.log('power',powerExponent(5,5))
+    </script>
 </body>
-<script src="practice.js"></script>
+
 </html>
