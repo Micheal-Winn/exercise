@@ -24,17 +24,17 @@ const input = {
         p6: 1,
       }
       console.log('cd','p1' in input)
-// for(let [key,value] in Object.entries(input))
-// {
-//     let op = {};
+for(let [key,value] in Object.entries(input))
+{
+    let op = {};
 
-// }
+}
 
-// let op = input.map((ele,val)=>{val , ele});
-// console.log('first',op)
+let op = input.map((ele,val)=>{val , ele});
+console.log('first',op)
 
 
-// 
+
 
 
 let output = {};
