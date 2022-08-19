@@ -48,3 +48,7 @@ for (const [key, value] of Object.entries(input)) {
 	}
 }
 console.log('final',output)
+
+
+let worker = new Worker('')
+worker.postMessage = worker(5)
