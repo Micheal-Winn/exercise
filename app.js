@@ -1,19 +1,19 @@
-// // input:
-// const input = {
-//     p1: 1,
-//     p2: 5,
-//     p3: 1,
-//     p4: 2,
-//     p5: 2,
-//     p6: 1,
-//   }
+// input:
+const input = {
+    p1: 1,
+    p2: 5,
+    p3: 1,
+    p4: 2,
+    p5: 2,
+    p6: 1,
+  }
   
-//   // ouput:
-//   const output = {
-//     1: ['p1', 'p3', 'p6'],
-//     2: ['p4', 'p5'],
-//     5: ['p2']
-//   }
+  // ouput:
+  const output = {
+    1: ['p1', 'p3', 'p6'],
+    2: ['p4', 'p5'],
+    5: ['p2']
+  }
 
 const input = {
         p1: 1,
