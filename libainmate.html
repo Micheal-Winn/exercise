@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>way</title>
+    <title>Document</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
 </head>
@@ -55,26 +55,26 @@
 
 
     <div class="vh-100 bg-info">
-        <h1 class="animate__animated ">Min ga lar par byar</h1>
-        <p class="animate__animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
+        <h1>Min ga lar par byar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
 
         </p>
     </div>
     <div class="vh-100 bg-success" id="point">
-        <h1 class="animate__animated ">Min ga lar par byar</h1>
-        <p class="animate__animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
+        <h1>Min ga lar par byar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
             
         </p>
     </div>
     <div class="vh-100 bg-primary">
-        <h1 class="animate__animated ">Min ga lar par byar</h1>
-        <p class="animate__animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
+        <h1>Min ga lar par byar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
             
         </p>
     </div>
     <div class="vh-100 bg-danger">
-        <h1 class="animate__animated ">Min ga lar par byar</h1>
-        <p class="animate__animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
+        <h1>Min ga lar par byar</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
             
         </p>
     </div>
@@ -93,25 +93,27 @@
       </script> -->
     
     <script src="./node_modules/waypoints/lib/noframework.waypoints.min.js"></script>
-    <script src="./node_modules/counterup2/dist/index.js"></script>
 
     <script>
         let nav = document.querySelector(".navbar")
-        let h1 = document.querySelectorAll("h1")
 
-        h1.forEach(function(currentH1){
-            new Waypoint({
-                element : currentH1,
-                handler : function(direction){
-                    if(direction === "down"){
-                        currentH1.classList.add("animate__slideInUp")
-        
-                    }
-                },
-                offset : "100%"
-            })
+        new Waypoint({
+            element : document.getElementById("point"),
+            handler : function(direction){
+                if(direction === "down"){
+
+                    nav.classList.add("position-fixed","animate__slideInDown")
+                }else {
+                    setTimeout(() => {
+                        nav.classList.remove("position-fixed","animate__slideOutUp")  
+                    }, 500);
+                    nav.classList.replace("animate__slideInDown","animate__slideOutUp")
+                    
+                }
+                console.log('direction',direction)
+            },
+            offset : "25%"
         })
-            
     </script>
 </body>
 </html>

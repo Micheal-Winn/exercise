@@ -1,6 +1,9 @@
 {
   "dependencies": {
+    "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
-    "typed.js": "^2.0.12"
+    "counterup2": "^2.0.2",
+    "typed.js": "^2.0.12",
+    "waypoints": "^4.0.1"
   }
 }
