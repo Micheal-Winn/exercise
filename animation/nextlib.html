@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>way</title>
+   
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../node_modules/glider-js/glider.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<body>
+    
+    <div class="m-5 p-5">
+        <div class="glider-contain">
+            <div class="glider">
+                <div class="bg-primary p-4 text-center"> 1 </div>
+                <div class="bg-secondary p-4 text-center"> 2 </div>
+                <div class="bg-danger p-4 text-center"> 3 </div>
+                <div class="bg-success p-4 text-center"> 4 </div>
+                <div class="bg-green p-4 text-center"> 5 </div>
+                <div class="bg-danger p-4 text-center"> 6 </div>
+            </div>
+            <button aria-label="Previous" class="glider-prev">
+                <i class="bi bi-arrow-left"></i>
+            </button>
+            <button aria-label="Next" class="glider-next">
+                <i class="bi bi-arrow-right"></i>
+            </button>
+            <div role="tablist" class="dots"></div>
+        </div>
+    </div>
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/glider-js/glider.min.js"></script>
+
+      <script>
+            new Glider(document.querySelector('.glider'),{
+                arrows: {
+                prev: '.glider-prev',
+                // may also pass element directly
+                next: '.glider-next'
+                },
+                draggable: true,
+                dots: '.dots',
+            });
+      </script>
+</body>

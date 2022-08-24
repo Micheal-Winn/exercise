@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>way</title>
+    <link rel="stylesheet" href="../node_modules/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="m-5 p-5">
+        <a href="http://google.com" class="btn btn-primary go">Google</a>
+    </div>
+
+    <button class="btn btn-outline-primary" onclick="showToast()">Toast</button>
+
+
+
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
+
+    
+    <script>
+        let go = document.querySelector(".go");
+        go.addEventListener('click',(e)=>{
+            e.preventDefault();
+            Swal.fire({
+            title: 'Are you sure to click?',
+            text: "You won't be able to revert this!",
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+            }).then((result) => {
+            if (result.isConfirmed) {
+                location.href = go.href;
+                console.log('you click the button')
+                // Swal.fire(
+                // 'Deleted!',
+                // 'Your file has been deleted.',
+                // 'success'
+                // )
+            }else{
+                console.log('you do not click')
+            }
+            })
+        })
+
+
+        function showToast(){
+            const Toast = Swal.mixin({
+            toast: true,
+            position: 'bottom-end',
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+                toast.addEventListener('mouseenter', Swal.stopTimer)
+                toast.addEventListener('mouseleave', Swal.resumeTimer)
+            }
+            })
+
+            Toast.fire({
+            icon: 'success',
+            title: 'Signed in successfully'
+            })
+        }
+
+
+        
+    </script>
+
+
+
+</body>

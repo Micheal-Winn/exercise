@@ -13,10 +13,10 @@
         <h1>
             Thant Zin Win <span id="text"></span>
         </h1>
-    </div> -->
+    </div>  -->
 
 
-    <nav class="navbar navbar-expand-lg bg-light w-100 animate__animated top-0">
+    <!-- <nav class="navbar navbar-expand-lg bg-light w-100 animate__animated top-0">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,7 +51,7 @@
             </form>
           </div>
         </div>
-      </nav>
+      </nav> -->
 
 
     <div class="vh-100 bg-info">
@@ -72,14 +72,34 @@
             
         </p>
     </div>
-    <div class="vh-100 bg-danger">
+    <div class="vh-100 bg-danger last">
         <h1 class="animate__animated ">Min ga lar par byar</h1>
         <p class="animate__animated">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium aliquid voluptatum consequatur porro ut, deleniti quae illo dolores voluptates at quasi tempore? Molestiae ducimus fugiat deserunt similique id sit sapiente animi, quae exercitationem ipsum magni nesciunt nam doloribus. Id ipsum sit cum vitae dolor inventore voluptas, repellendus ducimus culpa dignissimos!
             
         </p>
+        <div class="counter">1,123,456.78</div>
     </div>
+
+
+
+
+    <script src="./node_modules/counterup2/dist/index.js"></script>
+
     <script src="./node_modules/typed.js/lib/typed.min.js"></script>
-    <!-- <script>
+
+  <script>
+      const  counterUp = window.counterUp.default
+
+const el = document.querySelector( '.counter' ) 
+
+//  Start counting, typically you need to call this when the 
+//  element becomes visible, or whenever you like.
+counterUp( el, {
+    duration: 3000,
+   delay: 50,
+ } ) 
+    </script>
+    <script>
        let type = new Typed('#text', {
             strings: [
                 "hi min <span class='text-danger'>ga lar par<span/>",
@@ -90,9 +110,12 @@
             loop : true,
             backDelay: 2000
         });
-      </script> -->
+      </script>
     
-    <script src="./node_modules/waypoints/lib/noframework.waypoints.min.js"></script>
+  <script src="./node_modules/waypoints/lib/noframework.waypoints.min.js"></script>
+
+
+
     <script src="./node_modules/counterup2/dist/index.js"></script>
 
     <script>
@@ -112,6 +135,16 @@
             })
         })
             
+        new Waypoint({
+          element: document.querySelector('.last'),
+          handler: function(){
+            counterUp(el,{
+              duration:3000,
+              delay:50,
+            })
+          },
+          offset:"75%"
+        })
     </script>
 </body>
 </html>

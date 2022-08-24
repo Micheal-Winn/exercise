@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>way</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./node_modules/animate.css/animate.min.css">
+</head>
+<body>
+    <div class="div vh-100 "></div>
+    <div class="div vh-100 "></div>
+    <div class="div vh-100 bg-info last">
+        <h1 class="counter">1,123,456.78</h1>
+    </div>
+    <script src="./node_modules/counterup2/dist/index.js"></script>
+    <script src="./node_modules/waypoints/lib/noframework.waypoints.min.js"></script>
+
+
+    <script>
+            const  counterUp = window.counterUp.default;
+
+            const el = document.querySelector( '.counter' ) ;
+            new Waypoint({
+                element:document.querySelector(".last"),
+                handler:function(){
+                    counterUp(el,{
+                        duration:3000,
+                        delay:50,
+                    })
+                },
+                offset: "75%"
+            })
+    </script>
+</body>
