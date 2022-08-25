@@ -3,6 +3,7 @@
     "animate.css": "^4.1.1",
     "bootstrap": "^5.2.0",
     "bootstrap-icons": "^1.9.1",
+    "chart.js": "^3.9.1",
     "counterup2": "^2.0.2",
     "glider-js": "^1.7.7",
     "sweetalert2": "^11.4.29",
